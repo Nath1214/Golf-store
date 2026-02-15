@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenPaw Golf | Luxury Performance Apparel</title>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button id="close-cart" aria-label="Close Cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Items added via JS -->
+            <p class="empty-msg">Your bag is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <button class="btn btn-gold btn-full">Checkout</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">GREENPAW<span>GOLF</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" id="cart-icon" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Engineered for the Elements</h1>
+            <p>Experience the perfect fusion of luxury aesthetics and professional performance. Sustainably crafted for the modern game.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn btn-gold">Shop Collection</a>
+                <a href="#about" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-wind"></i>
+                <h3>Breathable Tech</h3>
+                <p>Advanced moisture-wicking fabrics that move with you.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Eco-Conscious</h3>
+                <p>Recycled materials meeting the highest performance standards.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-medal"></i>
+                <h3>Pro-Fit Design</h3>
+                <p>Tailored silhouettes designed by golfers, for golfers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="products">
+        <div class="container">
+            <h2 class="section-title">The Essentials</h2>
+            <div class="product-grid">
+                <!-- Polos -->
+                <div class="product-card">
+                    <div class="badge badge-new">New Arrival</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=400&q=80" alt="Performance Polo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Performance Polo</h3>
+                        <p class="price">$65.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Performance Polo" data-price="65.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Caps -->
+                <div class="product-card">
+                    <div class="badge badge-hot">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80" alt="Signature Cap">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature Cap</h3>
+                        <p class="price">$35.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Signature Cap" data-price="35.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Trousers -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=400&q=80" alt="Technical Trousers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Technical Trousers</h3>
+                        <p class="price">$110.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Technical Trousers" data-price="110.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Gloves -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=400&q=80" alt="Premium Glove">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Glove</h3>
+                        <p class="price">$25.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Premium Glove" data-price="25.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Golf Balls -->
+                <div class="product-card">
+                    <div class="badge badge-new">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=400&q=80" alt="Tour Edition Golf Balls">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tour Edition Golf Balls</h3>
+                        <p class="price">$45.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Tour Edition Golf Balls" data-price="45.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Accessories -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&q=80&w=800" alt="Clubhouse Tech Blazer">
+                    </div>
+                    <div class="product-info">
+                        <h3>Clubhouse Tech Blazer</h3>
+                        <p class="price">$185.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Clubhouse Tech Blazer" data-price="185.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Shoe Bag -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=400&q=80" alt="Signature Shoe Bag">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature Shoe Bag</h3>
+                        <p class="price">$55.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Signature Shoe Bag" data-price="55.00">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Putter Cover -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=400&q=80" alt="Premium Putter Cover">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Putter Cover</h3>
+                        <p class="price">$40.00</p>
+                        <button class="btn btn-gold btn-sm add-to-cart" data-name="Premium Putter Cover" data-price="40.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container newsletter-content">
+            <h2>Join the Inner Circle</h2>
+            <p>Subscribe for exclusive access to seasonal drops and professional tips.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email Address" aria-label="Email Address" required>
+                <button type="submit" class="btn btn-gold">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2 class="section-title">Defining the Modern Game</h2>
+                <p>Founded in 2024, GreenPaw Golf was born from a simple observation: golf apparel shouldn't force a choice between high-performance tech and high-end style.</p>
+                <p>Our pieces are designed to transition seamlessly from the course to the clubhouse, using materials that respect both the player and the environment.</p>
+                <a href="#" class="btn btn-outline-dark">Read More</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=600&q=80" alt="Our Craft">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Fairway Drive, Pebble Beach, CA</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>concierge@greenpawgolf.com</p>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" placeholder="Name" aria-label="Name" required>
+                    <input type="email" placeholder="Email" aria-label="Email" required>
+                    <textarea placeholder="How can we help you?" aria-label="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-gold">Send Message</button>
+                    <div id="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">GREENPAW<span>GOLF</span></div>
+
+            <!-- SOCIAL MEDIA LINKS - EASY TO UPDATE BELOW -->
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <!-- END SOCIAL MEDIA LINKS -->
+
+            <p class="copyright">&copy; 2025 GreenPaw Golf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
